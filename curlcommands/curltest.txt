@@ -1,0 +1,11 @@
+curl --form file=@/home/kali/ss.txt 'cloud.send.cm/cgi-bin/upload.cgi?upload_type=file&utype=anon' 
+
+cat g.txt |jq|grep "file_code"
+
+curl 'https://send.cm/?op=upload_result&st=OK&fn=91jnbeo8xhgn'|grep '<textarea class="form-control wd-400" rows="3">https://send.cm/d/'
+
+47
+
+curl -v https://send.cm/ -d "op=download2&id=86q06q3s9qm7"
+
+curl -L https://send.cm/ -d "op=download2&id=86q06q3s9qm7" >>mm
