@@ -18,6 +18,10 @@ string getcmdresult(string command){
 string sendcmextpath="/etc/sendcmtools";
 string sendcmtmppath="~/.sendcmtools";
 int main(int argc,char *argv[]){
+    if(argc==1){
+        cout<<"No file specified !"<<endl;
+        return 0;
+    }
     string filepath=argv[1];
     int filesta;
     if(filepath[0]=='/'||filepath[0]=='~'){

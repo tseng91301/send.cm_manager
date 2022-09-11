@@ -15,6 +15,10 @@ string getcmdresult(string command){
     pclose(dd);
     return(outp);
 }
+void excush(string com){
+    const char *comm=com.c_str();
+    system(comm);
+}
 void modestarter(){
     cout<<"send.cm Manager tool"<<endl;
     cout<<"Version 1.0"<<endl;
@@ -27,7 +31,32 @@ void modestarter(){
     cout<<"-I (--information) FILE_NAME (get the file's information)"<<endl;
 }
 int main(int argc,char *argv[]){
-    if(argc==1){
+    if(argc<=1){
         modestarter();
+    }else{
+        string meth=argv[1];
+        if(meth=="-U"||meth=="--upload"){
+            if(argc<3){
+                cout<<"Please input file name or path !"<<endl;
+                return 0;
+            }
+            string filename=argv[2];
+            excush("uploadsendcm "+filename);
+            return 0;
+        }
+        if(meth=="-D"||meth=="--download"){
+            if(argc<3){
+                cout<<"Please input file name or path !"<<endl;
+                return 0;
+            }
+            string filename=argv[2];
+            string localpath="";
+            if(argc==3){
+                localpath=argv[3];
+            }
+            
+            excush("downloadsendcm '"+filename+"' '"+localpath+"'");
+            return 0;
+        }
     }
 }
