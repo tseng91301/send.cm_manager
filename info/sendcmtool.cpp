@@ -30,6 +30,8 @@ void modestarter(){
     cout<<"-S (--share) FILE_NAME (get a download link for the file to share with others)"<<endl;
     cout<<"-I (--information) FILE_NAME (get the file's information)"<<endl;
 }
+string sendcmextpath="/etc/sendcmtools";
+string sendcmtmppath="~/.sendcmtools";
 int main(int argc,char *argv[]){
     if(argc<=1){
         modestarter();
@@ -51,12 +53,15 @@ int main(int argc,char *argv[]){
             }
             string filename=argv[2];
             string localpath="";
-            if(argc==3){
+            if(argc==4){
                 localpath=argv[3];
             }
             
             excush("downloadsendcm '"+filename+"' '"+localpath+"'");
             return 0;
+        }
+        if(meth=="-L"||meth=="--list"){
+            excush("php "+sendcmextpath+"/info/list.php");
         }
     }
 }

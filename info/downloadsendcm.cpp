@@ -30,9 +30,9 @@ int main(int argc,char *argv[]){
     string filename=argv[1];
     excush("echo '"+filename+"' > "+sendcmtmppath+"/tmp/downloadingfile");
     if(argc==3){
-        string localpath=argv[3];
+        string localpath=argv[2];
         excush("echo '"+localpath+"' > "+sendcmtmppath+"/tmp/downloadedfilepath");
     }
     
-    excush("php "+sendcmextpath+"/download.php");
+    excush("php "+sendcmextpath+"/info/download.php");
 }

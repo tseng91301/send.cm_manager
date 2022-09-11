@@ -20,6 +20,7 @@ $sendcmtmppath="~/.sendcmtools";
 $filename=exec("cat ".$sendcmtmppath."/tmp/downloadingfile");
 $a1=getcon($sendcmtmppath."/file");
 $a1len=sizeof($a1);
+$a1len--;
 $b2=0;
 $b3=0;
 for($a=0;$a<$a1len;$a++){
@@ -39,5 +40,6 @@ if($b2==0){
     if($downpath==''){
         $downpath="/tmp";
     }
-    exec('curl -L https://send.cm/ -d "op=download2&id='.$downid.'" >> "'.$downpath.'"');
+    exec('curl -L https://send.cm/ -d "op=download2&id='.$downid.'" >> "'.$downpath.'/'.$filename.'"');
 }
+?>
