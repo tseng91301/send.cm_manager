@@ -57,5 +57,6 @@ int main(){
         return 0;
     }
     cout<<"installed successfully!!"<<endl;
+    excush("./installlast.sh");
     
 }

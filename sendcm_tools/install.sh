@@ -13,10 +13,8 @@ sudo cp tmpexuf/* /bin
 mkdir ~/.sendcmtools
 mkdir ~/.sendcmtools/tmp
 touch ~/.sendcmtools/tmp/test.txt
-rm ~/.sendcmtools/tmp/test.txt
 mkdir ~/.sendcmtools/file
 touch ~/.sendcmtools/file/test.txt
-rm ~/.sendcmtools/file/test.txt
 tmpexuf/check
 rm -rf tmpexuf
 
