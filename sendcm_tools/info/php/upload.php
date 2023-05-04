@@ -3,7 +3,7 @@ $sendcmtmppath="~/.sendcmtools";
 $filepath=exec("cat ".$sendcmtmppath."/tmp/uploadingfile");
 //echo($filepath);
 exec("echo ''>".$sendcmtmppath."/tmp/tmphead");
-$codeget=exec("curl --form file=@'".$filepath."' 'cloud26.send.cm/cgi-bin/upload.cgi?upload_type=file&utype=anon' >> ".$sendcmtmppath."/tmp/tmphead");
+$codeget=exec("curl --form file=@'".$filepath."' 'upload-sg.send.cm/cgi-bin/upload.cgi?upload_type=file&utype=anon' >> ".$sendcmtmppath."/tmp/tmphead");
 $codeget2=exec("cat ".$sendcmtmppath."/tmp/tmphead|jq|grep \"file_code\"");
 //echo($codeget2);
 $codeget3=explode(":",$codeget2);
