@@ -1,6 +1,10 @@
 import json
 import random
 import string
+import argparse
+
+parser=argparse.ArgumentParser()
+parser.add_argument("-U","--upload",type=string,help="Upload file to cloud, add file path")
 
 filepath=".sendcmtool/files.json"
 
@@ -24,11 +28,11 @@ def putjs(contents,path):
         file.write(in1)
     return 1
 
-json_str = '{"name": "John", "age": 30, "gender": {}}'
+def upload()
 
-person_dict = json.loads(json_str)
+args=parser.parse_args()
+if args.upload:
 
-person_dict["occupation"] = "Software Engineer"
-person_dict["age"] = 31
+
 for key, value in person_dict.items():
     print(key, value)
