@@ -24,8 +24,6 @@ int main(){
     string aa=getcmdresult("find /etc/sendcmtools/info/upload.php");
     string bb=getcmdresult("find /etc/sendcmtools/info/download.php");
     string cc=getcmdresult("find /etc/sendcmtools/info/list.php");
-    string dd=getcmdresult("find ~/.sendcmtools/tmp/test.txt");
-    string ee=getcmdresult("find ~/.sendcmtools/file/test.txt");
     string ff=getcmdresult("find /bin/sendcmtool");
     string gg=getcmdresult("find /bin/downloadsendcm");
     string hh=getcmdresult("find /bin/uploadsendcm");
@@ -42,14 +40,6 @@ int main(){
     }
     if(cc!="/etc/sendcmtools/info/list.php"){
         cout<<"info/php/list.php not installed to /etc/sendcmtools"<<endl;
-        return 0;
-    }
-    if(dd!=homepath+"/.sendcmtools/tmp/test.txt"){
-        cout<<".sendcmtools/tmp not created in ~/"<<endl;
-        return 0;
-    }
-    if(ee!=homepath+"/.sendcmtools/file/test.txt"){
-        cout<<".sendcmtools/file not created in ~/"<<endl;
         return 0;
     }
     if(ff!="/bin/sendcmtool"||gg!="/bin/downloadsendcm"||hh!="/bin/uploadsendcm"){

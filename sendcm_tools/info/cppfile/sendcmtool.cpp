@@ -34,6 +34,7 @@ void modestarter(){
 }
 int initdev(){
     excush("php "+sendcmextpath+"/info/tools.php");
+    return 1;
 }
 
 int main(int argc,char *argv[]){

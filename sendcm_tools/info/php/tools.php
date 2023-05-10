@@ -3,9 +3,11 @@
     $tmppath="/tmp/sendcmtool";
     function checkdir(){
         if(!file_exists($infopath)){
+            echo "E1";
             exec("mkdir ".$infopath);
         }
         if(!file_exists($tmppath)){
+            echo "E2";
             exec("mkdir ".$tmppath);
         }
     }
