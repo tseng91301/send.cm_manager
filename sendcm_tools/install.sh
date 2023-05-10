@@ -2,6 +2,7 @@ sudo mkdir /etc/sendcmtools;
 sudo mkdir /etc/sendcmtools/info;
 sudo cp info/php/* /etc/sendcmtools/info;
 mkdir tmpexuf;
+mkdir tmpexuf2;
 chmod -R 755 tmpexuf;
 
 g++ info/cppfile/downloadsendcm.cpp -o tmpexuf/downloadsendcm;
