@@ -29,12 +29,4 @@ int main(int argc,char *argv[]){
     string filepath=argv[1];
     excush("echo '"+filepath+"' >"+sendcmtmppath+"/ulinfo");
     excush("php "+sendcmextpath+"/info/upload.php");
-
-
-    string finn=getcmdresult("cat "+filepath+".sendcmdl");
-    if(finn=="error1"){
-        cout<<"The file is banned by send.cm server"<<endl;
-    }else{
-        cout<<"File uploaded!"<<endl;
-    }
 }

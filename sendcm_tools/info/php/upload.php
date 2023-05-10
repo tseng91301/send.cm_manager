@@ -19,6 +19,8 @@ $codefin=$codeget2['file_code'];
 //echo($codefin."\n");
 $link1='';
 if($codefin=="undef"){
+    error_log("Error: The file is banned by send.cm server!\n");
+    error_log("Upload failed...");
     file_put_contents($filepath.".sendcmdl","error1");
     return 0;
 }else{
