@@ -44,6 +44,6 @@ $ulfile_info['upload_time']=time();
 $ulfile_info['last_update_time']=time();
 $ulfile_info['codeid']=$codefin;
 //echo($filepath.".sendcmdl");
-echo("File link: ".$link2);
+echo("File link: ".$link2."\n");
 jsw($ulfile_info,$filepath.".sendcmdl");
 ?>

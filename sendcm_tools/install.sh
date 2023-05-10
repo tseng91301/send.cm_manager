@@ -1,3 +1,4 @@
+echo "installing sendcm tools..."
 sudo mkdir /etc/sendcmtools;
 sudo mkdir /etc/sendcmtools/info;
 sudo cp info/php/* /etc/sendcmtools/info;
@@ -13,4 +14,5 @@ sudo cp tmpexuf/* /bin;
 tmpexuf2/check;
 rm -rf tmpexuf2;
 rm -rf tmpexuf;
+echo "Finish installation! Type 'sendcmtool' for further information."
 
