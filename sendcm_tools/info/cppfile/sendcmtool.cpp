@@ -26,7 +26,7 @@ void modestarter(){
     cout<<"Version 1.0"<<endl;
     cout<<"********************************"<<endl;
     cout<<"To use this tool,please use the argument listed below."<<endl;
-    cout<<"-U (--upload) FILE_PATH (upload a file to send.cm and leave file information at local side)"<<endl;
+    cout<<"-U (--upload) [-t (--directory)] FILE_PATH (upload a file [or Folder] to send.cm and leave file information at local side)"<<endl;
     cout<<"-L (--list) (List all files which were uploaded to send.cm)"<<endl;
     cout<<"-D (--download) FILE_NAME [PATH_TO_SAVE(save in /tmp if not definded)] (Download files which are in send.cm server)"<<endl;
     cout<<"-S (--share) FILE_NAME (get a download link for the file to share with others)"<<endl;
@@ -49,8 +49,18 @@ int main(int argc,char *argv[]){
                 cout<<"Please input file name or path !"<<endl;
                 return 0;
             }
+            string a1=argv[2];
+            if(a1=="-t"||a1=="--directory"){
+                if(argc<4){
+                    cout<<"Please input file name or path !"<<endl;
+                    return 0;
+                }
+                string filename=argv[3];
+                excush("uploadsendcm -t '"+filename+"'");
+                return 0;
+            }
             string filename=argv[2];
-            excush("uploadsendcm "+filename);
+            excush("uploadsendcm '"+filename+"'");
             return 0;
         }
         if(meth=="-D"||meth=="--download"){
@@ -60,11 +70,8 @@ int main(int argc,char *argv[]){
             }
             string filename=argv[2];
             string localpath="";
-            if(argc==4){
-                localpath=argv[3];
-            }
             
-            excush("downloadsendcm '"+filename+"' '"+localpath+"'");
+            excush("downloadsendcm '"+filename+"'");
             return 0;
         }
         if(meth=="-L"||meth=="--list"){

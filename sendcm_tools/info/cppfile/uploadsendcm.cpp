@@ -22,11 +22,20 @@ void excush(string com){
 string sendcmextpath="/etc/sendcmtools";
 string sendcmtmppath="/tmp/sendcmtool";
 int main(int argc,char *argv[]){
-    if(argc==1){
+    if(argc<=1){
         cout<<"No file specified !"<<endl;
         return 0;
     }
+    string a1=argv[1];
+    if(a1=="-t"){
+        if(argc<=2){
+            cout<<"No file specified !"<<endl;
+            return 0;
+        }
+        string filepath=argv[2];
+        excush("echo '{\"filepath\":\""+filepath+"\",\"t\":1}' >"+sendcmtmppath+"/ulinfo");
+    }
     string filepath=argv[1];
-    excush("echo '"+filepath+"' >"+sendcmtmppath+"/ulinfo");
+    excush("echo '{\"filepath\":\""+filepath+"\",\"t\":0}' >"+sendcmtmppath+"/ulinfo");
     excush("php "+sendcmextpath+"/info/upload.php");
 }
