@@ -15,37 +15,23 @@ string getcmdresult(string command){
     pclose(dd);
     return(outp);
 }
+void excush(string com){
+    const char *comm=com.c_str();
+    system(comm);
+}
 string sendcmextpath="/etc/sendcmtools";
-string sendcmtmppath="~/.sendcmtools";
+string sendcmtmppath="/tmp/sendcmtool";
 int main(int argc,char *argv[]){
     if(argc==1){
         cout<<"No file specified !"<<endl;
         return 0;
     }
     string filepath=argv[1];
-    int filesta;
-    if(filepath[0]=='/'||filepath[0]=='~'){
-        filesta=0;
-    }else{
-        filesta=1;
-    }
-    if(filesta==1){
-        string tmp1=getcmdresult("pwd");
-        if(tmp1!="/"){
-            tmp1=tmp1+"/";
-        }
-        filepath=tmp1+filepath;
-    }
-    //cout<<filepath<<endl;
-    string com="echo '"+filepath+"' > "+sendcmtmppath+"/tmp/uploadingfile";
-    const char *comm=com.c_str();
-    system(comm);
+    excush("echo '"+filepath+"' >"+sendcmtmppath+"/ulinfo");
+    excush("php "+sendcmextpath+"/info/upload.php");
 
-    string com1="php "+sendcmextpath+"/info/upload.php";
-    const char *comm1=com1.c_str();
-    system(comm1);
 
-    string finn=getcmdresult("cat "+sendcmtmppath+"/tmp/filelink");
+    string finn=getcmdresult("cat "+filepath+".sendcmdl");
     if(finn=="error1"){
         cout<<"The file is banned by send.cm server"<<endl;
     }else{

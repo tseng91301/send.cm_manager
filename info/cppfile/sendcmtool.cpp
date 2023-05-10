@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+
+string sendcmextpath="/etc/sendcmtools";
 string getcmdresult(string command){
     FILE *dd;
     char buffer[80];
@@ -30,9 +32,12 @@ void modestarter(){
     cout<<"-S (--share) FILE_NAME (get a download link for the file to share with others)"<<endl;
     cout<<"-I (--information) FILE_NAME (get the file's information)"<<endl;
 }
-string sendcmextpath="/etc/sendcmtools";
-string sendcmtmppath="~/.sendcmtools";
+int initdev(){
+    excush("php "+sendcmextpath+"/info/tools.php");
+}
+
 int main(int argc,char *argv[]){
+    initdev();
     if(argc<=1){
         modestarter();
     }else{
@@ -48,7 +53,7 @@ int main(int argc,char *argv[]){
         }
         if(meth=="-D"||meth=="--download"){
             if(argc<3){
-                cout<<"Please input file name or path !"<<endl;
+                cout<<"Please input file path !"<<endl;
                 return 0;
             }
             string filename=argv[2];

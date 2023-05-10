@@ -19,20 +19,16 @@ void excush(string com){
     const char *comm=com.c_str();
     system(comm);
 }
-string sendcmtmppath="~/.sendcmtools";
+string sendcmtmppath="/tmp/sendcmtool";
 string sendcmextpath="/etc/sendcmtools";
 int main(int argc,char *argv[]){
     if(argc==1){
         cout<<"No file specified !"<<endl;
         return 0;
     }
-    excush("echo '' > "+sendcmtmppath+"/tmp/downloadedfilepath");
+    string jsword="";
+    excush("echo '' > "+sendcmtmppath+"/dlinfo");
     string filename=argv[1];
-    excush("echo '"+filename+"' > "+sendcmtmppath+"/tmp/downloadingfile");
-    if(argc==3){
-        string localpath=argv[2];
-        excush("echo '"+localpath+"' > "+sendcmtmppath+"/tmp/downloadedfilepath");
-    }
-    
+    excush("echo '"+filename+"' > "+sendcmtmppath+"/dlinfo");
     excush("php "+sendcmextpath+"/info/download.php");
 }
