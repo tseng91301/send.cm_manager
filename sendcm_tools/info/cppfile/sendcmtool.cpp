@@ -33,6 +33,7 @@ void modestarter(){
     cout<<"-I (--information) FILE_NAME (get the file's information)"<<endl;
 }
 int initdev(){
+    cout<<"init..."<<endl;
     excush("php "+sendcmextpath+"/info/tools.php");
     return 1;
 }
