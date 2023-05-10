@@ -27,6 +27,7 @@ int main(int argc,char *argv[]){
         return 0;
     }
     string a1=argv[1];
+    //cout<<a1<<endl;
     if(a1=="-t"){
         if(argc<=2){
             cout<<"No file specified !"<<endl;
@@ -34,8 +35,11 @@ int main(int argc,char *argv[]){
         }
         string filepath=argv[2];
         excush("echo '{\"filepath\":\""+filepath+"\",\"t\":1}' >"+sendcmtmppath+"/ulinfo");
+    }else{
+        string filepath=argv[1];
+        excush("echo '{\"filepath\":\""+filepath+"\",\"t\":0}' >"+sendcmtmppath+"/ulinfo");
     }
-    string filepath=argv[1];
-    excush("echo '{\"filepath\":\""+filepath+"\",\"t\":0}' >"+sendcmtmppath+"/ulinfo");
+    
     excush("php "+sendcmextpath+"/info/upload.php");
+    return 0;
 }

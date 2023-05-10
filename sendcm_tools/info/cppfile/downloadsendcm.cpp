@@ -22,12 +22,10 @@ void excush(string com){
 string sendcmtmppath="/tmp/sendcmtool";
 string sendcmextpath="/etc/sendcmtools";
 int main(int argc,char *argv[]){
-    if(argc==1){
+    if(argc<=1){
         cout<<"No file specified !"<<endl;
         return 0;
     }
-    string jsword="";
-    excush("echo '' > "+sendcmtmppath+"/dlinfo");
     string filename=argv[1];
     excush("echo '"+filename+"' > "+sendcmtmppath+"/dlinfo");
     excush("php "+sendcmextpath+"/info/download.php");

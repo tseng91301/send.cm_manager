@@ -28,7 +28,7 @@ void modestarter(){
     cout<<"To use this tool,please use the argument listed below."<<endl;
     cout<<"-U (--upload) [-t (--directory)] FILE_PATH (upload a file [or Folder] to send.cm and leave file information at local side)"<<endl;
     cout<<"-L (--list) (List all files which were uploaded to send.cm)"<<endl;
-    cout<<"-D (--download) FILE_NAME [PATH_TO_SAVE(save in /tmp if not definded)] (Download files which are in send.cm server)"<<endl;
+    cout<<"-D (--download) FILE_NAME (Download(Restore) files which are in send.cm server)"<<endl;
     cout<<"-S (--share) FILE_NAME (get a download link for the file to share with others)"<<endl;
     cout<<"-I (--information) FILE_NAME (get the file's information)"<<endl;
 }
@@ -56,6 +56,7 @@ int main(int argc,char *argv[]){
                     return 0;
                 }
                 string filename=argv[3];
+                //cout<<"uploadsendcm -t '"+filename+"'"<<endl;
                 excush("uploadsendcm -t '"+filename+"'");
                 return 0;
             }
@@ -70,7 +71,6 @@ int main(int argc,char *argv[]){
             }
             string filename=argv[2];
             string localpath="";
-            
             excush("downloadsendcm '"+filename+"'");
             return 0;
         }
