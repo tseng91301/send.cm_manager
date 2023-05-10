@@ -1,16 +1,13 @@
 <?php
-    $infopath="~/.sendcmtool";
     $tmppath="/tmp/sendcmtool";
-    function checkdir(){
-        if(!file_exists($infopath)){
-            echo "E1";
-            exec("mkdir ".$infopath);
-        }
-        if(!file_exists($tmppath)){
-            echo "E2";
-            exec("mkdir ".$tmppath);
+    //echo ($tmppath."\n");
+    function checkdir($path){
+        if(!file_exists($path)){
+            echo "E2\n";
+            exec("mkdir ".$path."\n");
         }
     }
+    checkdir($tmppath);
     function jsr($path){
         $in=file_get_contents($path);
         $out=json_decode($in,true);

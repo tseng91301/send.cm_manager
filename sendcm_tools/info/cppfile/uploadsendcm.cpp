@@ -35,6 +35,6 @@ int main(int argc,char *argv[]){
     if(finn=="error1"){
         cout<<"The file is banned by send.cm server"<<endl;
     }else{
-        cout<<finn<<endl;
+        cout<<"File uploaded!"<<endl;
     }
 }

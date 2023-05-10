@@ -1,17 +1,22 @@
 <?php include "tools.php";
+//echo("upload.php\n");
+//system("pwd");
+//echo "\n";
 $filepath=file_get_contents($tmppath."/ulinfo");
-//echo($filepath);
+$filepath=str_replace("\n","",$filepath);
+//exec("touch '".$filepath."'.sendcmdl");
+//echo($filepath."\n");
 if(!file_exists($filepath)){
-    echo("Error: File not found!");
+    echo("Error: File not found!\n");
     return;
 }
 exec("echo ''>".$tmppath."/tmphead");
-$codeget=exec("curl --form file=@'".$filepath."' 'upload-sg.send.cm/cgi-bin/upload.cgi?upload_type=file&utype=anon' >> ".$tmppath."/tmphead");
-echo $codeget;
-$codeget2=jsr2($codeget);
+$codeget=exec("curl --form file=@'".$filepath."' 'upload-sg.send.cm/cgi-bin/upload.cgi?upload_type=file&utype=anon' > ".$tmppath."/tmphead");
+//echo $codeget;
+$codeget2=jsr($tmppath."/tmphead")[0];
 //$codeget2=exec("cat ".$tmppath."/tmp/tmphead|jq|grep \"file_code\"");
-//echo($codeget2);
 $codefin=$codeget2['file_code'];
+//echo($codefin."\n");
 $link1='';
 if($codefin=="undef"){
     file_put_contents($filepath.".sendcmdl","error1");
@@ -38,6 +43,7 @@ $ulfile_info['link']=$link2;
 $ulfile_info['upload_time']=time();
 $ulfile_info['last_update_time']=time();
 $ulfile_info['codeid']=$codefin;
-
-jsw($ulfile_info,$filepath);
+//echo($filepath.".sendcmdl");
+echo("File link: ".$link2);
+jsw($ulfile_info,$filepath.".sendcmdl");
 ?>
