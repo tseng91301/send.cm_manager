@@ -7,14 +7,9 @@ chmod -R 755 tmpexuf
 g++ info/cppfile/downloadsendcm.cpp -o tmpexuf/downloadsendcm
 g++ info/cppfile/uploadsendcm.cpp -o tmpexuf/uploadsendcm
 g++ info/cppfile/sendcmtool.cpp -o tmpexuf/sendcmtool
-g++ info/install/check.cpp -o tmpexuf/check
+g++ info/install/check.cpp -o tmpexuf2/check
 sudo cp tmpexuf/* /bin
-
-mkdir ~/.sendcmtools
-mkdir ~/.sendcmtools/tmp
-touch ~/.sendcmtools/tmp/test.txt
-mkdir ~/.sendcmtools/file
-touch ~/.sendcmtools/file/test.txt
-tmpexuf/check
+tmpexuf2/check
+rm -rf tmpexuf2
 rm -rf tmpexuf
 
