@@ -33,9 +33,9 @@ $ulfile_info['upload_time']=time();
 $ulfile_info['last_update_time']=time();
 $ulfile_info['t']=$ulinfo['t'];
 if($ulinfo['t']){
-    exec("rm '".$filepath.".zip'");
+    exec("rm '".$filepath2."'");
 }
-exec("rm -rf '$filepath-di'");
+exec("rm -rf '$filepath2-di'");
 jsw($ulfile_info,$filepath.".sendcmdl");
 
 function upload_host($host,$f_path,$t_path){
