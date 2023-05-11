@@ -1,5 +1,2 @@
 echo "Removing sendcm tools..."
-sudo rm -rf /etc/sendcmtools/;
-sudo rm /bin/sendcmtool;
-sudo rm /bin/uploadsendcm;
-sudo rm /bin/downloadsendcm;
+./uninstall-step_2.sh

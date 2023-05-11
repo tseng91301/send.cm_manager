@@ -23,14 +23,11 @@ void excush(string com){
 }
 void modestarter(){
     cout<<"send.cm Manager tool"<<endl;
-    cout<<"Version 1.0"<<endl;
+    cout<<"Version 1.2"<<endl;
     cout<<"********************************"<<endl;
     cout<<"To use this tool,please use the argument listed below."<<endl;
     cout<<"-U (--upload) [-t (--directory)] FILE_PATH (upload a file [or Folder] to send.cm and leave file information at local side)"<<endl;
-    cout<<"-L (--list) (List all files which were uploaded to send.cm)"<<endl;
     cout<<"-D (--download) FILE_NAME (Download(Restore) files which are in send.cm server)"<<endl;
-    cout<<"-S (--share) FILE_NAME (get a download link for the file to share with others)"<<endl;
-    cout<<"-I (--information) FILE_NAME (get the file's information)"<<endl;
 }
 int initdev(){
     cout<<"init..."<<endl;
