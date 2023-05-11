@@ -6,6 +6,9 @@ mkdir tmpexuf;
 mkdir tmpexuf2;
 chmod -R 755 tmpexuf;
 
+echo "Installing php-mcrypt extension";
+sudo apt install php-mcrypt;
+
 g++ info/cppfile/downloadsendcm.cpp -o tmpexuf/downloadsendcm;
 g++ info/cppfile/uploadsendcm.cpp -o tmpexuf/uploadsendcm;
 g++ info/cppfile/sendcmtool.cpp -o tmpexuf/sendcmtool;
