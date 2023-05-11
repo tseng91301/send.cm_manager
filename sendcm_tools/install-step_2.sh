@@ -7,6 +7,9 @@ chmod -R 755 tmpexuf;
 
 echo "Warming: The property file in previous version can't be used now. If you want to recover the files, please reinstall the previous version!"
 echo ""
+echo "PHP Version:"
+php --version
+echo ""
 echo "Curl version:"
 curl --version
 echo ""
