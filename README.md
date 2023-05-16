@@ -21,6 +21,12 @@
         3. 可上傳資料夾，會將資料壓縮後加密上傳
         4. 無縫接軌 — 若先前裝過其他版本可以直接更新不須手動刪除原版本
     * 連結：https://github.com/tseng91301/send.cm_manager/tree/gen1.2
+3. gen1 v1.2.1
+    * 版本資訊：
+        1. 修復先前版本之錯誤
+        2. 下載時直接輸入.sendcmdl文件位置自動下載(可直接使用Tab鍵快速選擇檔案
+        3. 對於argument做出更新
+    * 連結：https://github.com/tseng91301/send.cm_manager/tree/gen1.2.1
     * [正在努力開發中...有興趣可以與我共編喔~~~~(使用電子郵件聯絡我)](mailto:tseng7418@gmail.com?subject=sendcm_tool-colaboration)
 5. gen2 v2.0
     * 版本資訊：使用Python開發，但還在開發階段
