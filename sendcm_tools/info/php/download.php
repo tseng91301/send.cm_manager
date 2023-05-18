@@ -2,7 +2,7 @@
 $filename=file_get_contents($tmppath."/dlinfo");
 $filename=str_replace("\n","",$filename);
 if(!file_exists($filename.".sendcmdl")){
-    echo("Error: File property not found!");
+    echo("Error: File property not found!\n");
     return;
 }
 $fileinfo=jsr($filename.".sendcmdl");

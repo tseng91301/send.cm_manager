@@ -5,7 +5,7 @@ mkdir tmpexuf;
 mkdir tmpexuf2;
 chmod -R 755 tmpexuf;
 
-echo "Warming: The property file in previous version can't be used now. If you want to recover the files, please reinstall the previous version!"
+echo "Warming: The property file in version previous than 1.2 can't be used now. If you want to recover the files, please reinstall the previous version!"
 echo ""
 echo "PHP Version:"
 php --version
@@ -17,7 +17,7 @@ echo "g++ version:"
 g++ --version
 echo ""
 
-echo "Version 1.2 requires PHP mcrypt extension to encrypt data.";
+echo "Version 1.2.1 requires PHP mcrypt extension to encrypt data.";
 echo "If this hasn't been installed, you can use command below or other approaches to install.";
 echo "\`sudo apt install php-mcrypt\`";
 echo ""

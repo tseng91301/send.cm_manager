@@ -1,5 +1,5 @@
 <?php include "tools.php";
-$uplhost="upload-sg.send.cm";
+$uplhost=search_upload_host();
 
 $ulinfo=jsr($tmppath."/ulinfo");
 $filepath=$ulinfo['filepath'];
@@ -38,6 +38,14 @@ if($ulinfo['t']){
 exec("rm -rf '$filepath2-di'");
 jsw($ulfile_info,$filepath.".sendcmdl");
 
+function search_upload_host(){
+    echo("Finding upload mirror...\n");
+    $searchhost=exec('curl https://send.cm/?op=upload_form|grep \'<form autocomplete="off" id="uploadfile" method="POST" enctype="multipart/form-data" action=\'');
+    $s2=explode(" ",$searchhost)[5];//action="https://9216.send.cm/cgi-bin/upload.cgi?upload_type=file&utype=anon">   
+    $s3=explode("/",$s2)[2];
+    echo("Find host: ".$s3."\n");
+    return $s3;
+}
 function upload_host($host,$f_path,$t_path){
     exec("echo ''>$t_path/tmphead");
     exec("curl --form file=@'$f_path' '$host/cgi-bin/upload.cgi?upload_type=file&utype=anon' > $t_path/tmphead");
